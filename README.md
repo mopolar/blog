@@ -10,13 +10,14 @@ The code available in this repository was include:
 
 ## Installation and execution
 
-Once you have Anaconda installed, in your terminal, run:
+create environment:
 
-```conda create --yes --name simpleblog python=3.8```
+```python -m virtualenv ven```
 
 Then, you should activate the environment:
 
-```conda activate simpleblog```
+```source venv/Script/activate``` for Windows
+```source venv/bin/activate``` for Linux
 
 Then, install the dependencies:
 
@@ -25,6 +26,11 @@ Then, install the dependencies:
 Then, create the database and insert a few examples:
 
 ```python load_database.py```
+
+Or add Database URL:
+
+```export BATABASE_URL1='url'```
+
 
 Then, you can run the project:
 
