@@ -3,6 +3,7 @@ from flask import request, jsonify, abort
 from flaskblog import app, db, bcrypt
 from flaskblog.models import Token, Post, User
 import datetime
+import json
 
 
 # method used to create a token that can be used
@@ -48,7 +49,7 @@ def api():
 @app.route('/api/posts', methods=['GET'])
 def api_get_posts():
 	posts = Post.query.all()
-	return jsonify(posts)
+	return jsonify([i.serialize for i in posts])
 
 
 # method that returns a specific post

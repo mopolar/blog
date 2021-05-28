@@ -36,6 +36,15 @@ class Post(db.Model):
     def __repr__(self):
         return f"<Post(id='{self.id}', user_id='{self.user_id}', title='{self.title}', date_posted='{self.date_posted}')>"
 
+    @property
+    def serialize(self):
+        return {
+            'id': self.id,
+            'user_id': self.user_id,
+            'title': self.title,
+            'date_posted': self.date_posted
+        }
+
 
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
