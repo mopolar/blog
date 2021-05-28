@@ -56,7 +56,7 @@ def api_get_posts():
 @app.route('/api/post/<int:post_id>', methods=['GET'])
 def api_get_post(post_id):
 	post = Post.query.get_or_404(post_id)
-	return jsonify(post)
+	return jsonify(post.serialize)
 
 
 # method that inserts a new post
